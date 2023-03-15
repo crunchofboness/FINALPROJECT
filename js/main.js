@@ -58,16 +58,17 @@ const swiper = new Swiper('.swiper-container', {
   },
 
   slidesPerView: 3,
-  loop: true,
 
   speed:1000,
+
+  loop: true,
 
   pagination: {
     el: '.swiper-pagination',
     type: 'fraction',
   },
 
-  spaceBetween: 50,
+  spaceBetween: 30,
 
  });
 
@@ -114,3 +115,27 @@ document.querySelectorAll('.btn__item').forEach(function(tabsBtn){
     document.querySelector(`[data-target="${path}"]`).classList.add('tabs-item--active');
     });
   });
+
+
+  ymaps.ready(init);
+function init(){
+    // Создание карты.
+    var myMap = new ymaps.Map("map", {
+        // Координаты центра карты.
+        // Порядок по умолчанию: «широта, долгота».
+        // Чтобы не определять координаты центра карты вручную,
+        // воспользуйтесь инструментом Определение координат.
+        center: [55.760783, 37.614401],
+        // Уровень масштабирования. Допустимые значения:
+        // от 0 (весь мир) до 19.
+        zoom: 15,
+    });
+
+    var placemark = new ymaps.Placemark([55.760783, 37.614401], {}, {
+      iconLayout: 'default#image',
+      iconImageHref: './img/mark.svg',
+      iconImageSize: [20, 20]
+  });
+
+  myMap.geoObjects.add(placemark);
+}

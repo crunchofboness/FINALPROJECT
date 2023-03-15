@@ -116,7 +116,7 @@ body {
 }
 
 .header__container {
-  padding: 30px 0;
+  padding: 30px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -240,10 +240,17 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+.selectbar__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .selectbar__selects {
   z-index: 1000;
   display: flex;
   align-items: center;
+  margin-right: auto;
 }
 
 .selectbar__selects .choices {
@@ -279,16 +286,21 @@ body {
 }
 
 .selectbar__selects .choices__list--dropdown {
+  height: 280px;
   width: 300px;
+  overflow: hidden;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
 .selectbar__selects .choices__list--dropdown, .choices__list[aria-expanded] {
   top: 216%;
+  overflow: hidden;
 } 
 
 .selectbar__selects .is-open .choices__list--dropdown {
   width: 300px;
+  height: 280px;
+  overflow: hidden;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: none;
   border-top-left-radius: 0;
@@ -351,6 +363,17 @@ body {
 
 .selectbar__selects .choices__item:not(:last-child) {
   margin-bottom: 20px;
+}
+
+.simplebar-scrollbar.simplebar-visible:before {
+  opacity: 1;
+}
+
+.simplebar-scrollbar::before {
+  width: 6px;
+  height: 70px;
+  background-color: #CCB26E;
+  opacity: 1;
 }
 
 [data-value~="tinto"] {
@@ -431,6 +454,45 @@ body {
 
 [data-value~="balla"] {
   background-image: url(../img/balla.jpg);
+}
+
+[data-value~="flat-space"] {
+  background-color: #999;
+  opacity: 0.7;
+}
+
+.selectbar__searchform {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchform__btn {
+  display: flex;
+  vertical-align: middle;
+  align-self: center;
+  margin-right: 10px;
+}
+
+.serchform__input {
+  margin: 0;
+  padding: 0;
+  width: 218px;
+  padding-bottom: 2px;
+  background: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #fff;
+}
+
+.serchform__input::placeholder {
+  margin: 0;
+  padding: 0;
+  opacity: 1;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  color: rgba(255, 255, 255, 0.85)
 }
 
 /* ABOUT */
@@ -604,7 +666,7 @@ padding: 80px 0;
   right: 0px;
 	width: 15px;
 	height: 15px;
-  border: 1px solid #C283F3;
+  border: 1px solid #fff;
 	border-radius: none;
 }
 
@@ -776,7 +838,13 @@ padding: 80px 0;
   margin-bottom: 41px;
   display: flex;
   flex-direction: column;
-  border-top: 1px solid #CACACA;;
+  border-top: 1px solid #CACACA;
+}
+
+.acc__item:last-child {
+  padding-bottom: 41px;
+  margin-bottom: 0;
+  border-bottom: 1px solid #CACACA;
 }
 
 .acc__item-title {
@@ -980,12 +1048,9 @@ padding: 80px 0;
   color: #333333;
 }
 
-.swiper-fourth__container {
-  overflow: hidden;
-}
 
-.swiper-fourth__container .swiper-wrapper {
-  padding: 0 75px;
+.swiper-fourth__container  {
+overflow: hidden;
 }
 
 .swiper-fourth__container .swiper-slide {
@@ -999,7 +1064,7 @@ padding: 80px 0;
 
 /* CONTACTS */
 
-.contact {
+.contact__wrapper {
   border: 1px solid #cacaca;
 }
 
@@ -1038,6 +1103,15 @@ padding: 80px 0;
   margin-right: auto;
 }
 
+.contact___form-input {
+  padding: 9px 0;
+  padding-left: 24px;
+  width: 270px;
+  outline: none;
+  border: 1px solid #333;
+  border-radius: 100px;
+}
+
 .contact___form-input:not(:last-child) {
   margin-right: 20px;
 }
@@ -1064,5 +1138,55 @@ padding: 80px 0;
 }
 
 .links__list-item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.main__map {
+  width: 100%;
+  min-height: 700px;
+}
+
+[class*="ground-pane"] {
+  filter: grayscale(1);
+}
+
+.ymaps-2-1-79-searchbox__input-cell,
+.ymaps-2-1-79-zoom__scale,
+.ymaps-2-1-79-searchbox__button-cell,
+.ymaps-2-1-79-search,
+.ymaps-2-1-79-controls__toolbar_right,
+.ymaps-2-1-79-map-copyrights-promo,
+.ymaps-2-1-79-controls__bottom,
+.ymaps-2-1-79-copyright__agreement {
+  display: none !important;
+}
+
+.ymaps-2-1-79-zoom {
+  height: 0 !important;
+}
+
+.ymaps-2-1-79-controls-pane{
+  top: 40% !important;
+  left: 97% !important;
+}
+
+/* FOOTER */
+
+.footer {
+  background-color: #000;
+}
+
+.footer__container {
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__logo{
+  margin-right: auto;
+}
+
+.footer__links svg:not(:last-child) {
   margin-right: 20px;
 }
